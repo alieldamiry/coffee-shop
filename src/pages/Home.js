@@ -1,7 +1,8 @@
+import Menu from '../components/Sections/Menu/Menu';
 import Hero from '../components/Hero';
 import IntroInfo from '../components/IntroInfo/IntroInfo';
-import Services from '../components/Services/Services';
-import Story from '../components/Story';
+import Services from '../components/Sections/Services/Services';
+import Story from '../components/Sections/Story';
 
 const Home = () => {
     return (
@@ -10,6 +11,7 @@ const Home = () => {
             <IntroInfo />
             <Story />
             <Services />
+            <Menu />
         </>
     )
 }

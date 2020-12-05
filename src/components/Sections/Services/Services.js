@@ -1,13 +1,13 @@
 import { Grid, makeStyles } from '@material-ui/core';
-import coffeeBean from '../../assets/images/services/coffee-bean.png';
-import cargoTruck from '../../assets/images/services/cargo-truck.png';
-import choices from '../../assets/images/services/choices.png';
+import coffeeBean from '../../../assets/images/services/coffee-bean.png';
+import cargoTruck from '../../../assets/images/services/cargo-truck.png';
+import choices from '../../../assets/images/services/choices.png';
 import Service from './Service';
 
 const useStyles = makeStyles((theme) => ({
     services: {
         backgroundColor: theme.palette.primary.main,
-        padding: '7rem 0',
+        padding: '3rem 0',
     },
     cardsContainer: {
         maxWidth: 1100,
