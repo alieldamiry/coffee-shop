@@ -1,4 +1,4 @@
-import { Grid, makeStyles, Paper, Typography } from "@material-ui/core"
+import { Grid, makeStyles, Paper } from "@material-ui/core"
 import InfoCard from "./InfoCard";
 import PhoneIcon from '@material-ui/icons/Phone';
 import MyLocationIcon from '@material-ui/icons/MyLocation';
@@ -6,7 +6,7 @@ import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
 
 const useStyles = makeStyles((theme) => ({
     IntroInfo: {
-        padding: 10,
+        padding: '3%',
         margin: 'auto',
         maxWidth: 900,
     },
@@ -22,7 +22,7 @@ const IntroInfo = () => {
                     direction="row"
                     // justify="center"
                     // alignItems="center"
-                    spacing="2">
+                    spacing={2}>
                     <InfoCard
                         icon={<PhoneIcon color="primary" fontSize="small" style={{ marginTop: '3px' }} />}
                         title='This is a title'

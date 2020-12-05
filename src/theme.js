@@ -1,25 +1,30 @@
 const { createMuiTheme } = require("@material-ui/core");
 const theme = createMuiTheme({
+    // Palette
     palette: {
         primary: {
             main: '#c49b63'
         },
     },
+    // Typography
+    typography: {
+        fontFamily: 'Poppins',
+    },
+    //Props
     props: {
         MuiLink: {
             underline: 'none'
         },
         MuiButton: {
             disableRipple: true
-        }
+        },
     },
-    typography: {
-        fontFamily: 'Poppins'
-    },
+    //Shape
     shape: {
         borderRadius: 0
     },
-
+    
+    //Overrides
     overrides: {
         MuiPaper: {
             root: {
@@ -31,22 +36,16 @@ const theme = createMuiTheme({
             root: {
                 margin: 2,
                 padding: 16,
-                fontSize:12
+                fontSize: 12
             },
             outlined: {
                 margin: 2,
                 padding: 16,
-                fontSize:12
+                fontSize: 12
             },
         },
-        // MuiButtonOutlined: {
-        //     padding: 20
-        // }
-        // MuiButtonOutlined: {
-        //     padding: 'unset'
-        // }
     },
-    shadows: ["none"],
+    // shadows: ["none"],
 })
 
 export default theme;
