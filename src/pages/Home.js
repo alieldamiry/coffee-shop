@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import IntroInfo from '../components/IntroInfo/IntroInfo';
 import Services from '../components/Sections/Services/Services';
 import Story from '../components/Sections/Story';
+import Achievements from '../components/Sections/Achievements/Achievements';
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <Story />
             <Services />
             <Menu />
+            <Achievements />
         </>
     )
 }
