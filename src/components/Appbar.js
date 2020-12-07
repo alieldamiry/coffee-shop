@@ -12,9 +12,9 @@ import SideDrawer from './SideDrawer';
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
-        background: 'none',
+        background: 'rgba(0, 0 , 0, 0.7)',
         color: '#ffffff',
-        // boxShadow: 'none'
+        boxShadow: 'none'
     },
     desktopNavLinks: {
         display: 'none',
