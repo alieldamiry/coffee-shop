@@ -1,6 +1,6 @@
 
 import { makeStyles, Typography } from '@material-ui/core';
-import storyImg from '../../assets/images/story-bg.jpg';
+import storyImg from '../../assets/images/backgrounds/story-bg.jpg';
 
 const useStyles = makeStyles((theme) => ({
     story: {

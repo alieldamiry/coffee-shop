@@ -1,5 +1,5 @@
 import { Button, makeStyles, Typography } from "@material-ui/core"
-import HeroBg from "../assets/images/hero-bg.jpg";
+import HeroBg from "../assets/images/backgrounds/hero-bg.jpg";
 
 const useStyles = makeStyles((theme) => ({
     hero: {
