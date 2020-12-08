@@ -32,7 +32,7 @@ const Product = ({ name, image, description, price }) => {
         <Grid item xs={12} sm={6} lg={3}>
             <div className={classes.product}>
                 <div className={classes.productImg}>
-                    <img src={image} />
+                    <img src={image} alt={name} />
                 </div>
                 <Typography className={classes.productTitle} component="h6" variant="h6">{name}</Typography>
                 <Typography className={classes.productDescription}>{description}</Typography>

@@ -1,4 +1,4 @@
-import { Button, Grid, makeStyles, Typography } from "@material-ui/core";
+import { Grid, makeStyles, Typography } from "@material-ui/core";
 import productImg1 from '../../../assets/images/drinks/1.jpg';
 import productImg2 from '../../../assets/images/drinks/2.jpg';
 import productImg3 from '../../../assets/images/drinks/3.jpg';
