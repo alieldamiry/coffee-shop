@@ -1,4 +1,4 @@
-import { Grid, makeStyles, Typography } from '@material-ui/core';
+import { Grid, makeStyles } from '@material-ui/core';
 import bgImg from '../../../assets/images/achievements-bg.jpg';
 import Achievement from './Achievement';
 
