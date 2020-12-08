@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundImage: `radial-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${bgImg})`,
         backgroundPosition: 'top center',
         backgroundSize: 'cover',
+        backgroundAttachment: 'fixed',
         backgroundRepeat: 'no-repeat',
         color: '#ffffff',
         padding: '5rem 10%',

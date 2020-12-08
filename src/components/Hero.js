@@ -5,6 +5,7 @@ const useStyles = makeStyles((theme) => ({
     hero: {
         backgroundImage: `radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),url(${HeroBg})`,
         height: ' 100vh',
+        backgroundAttachment: 'fixed',
         backgroundPosition: 'center center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
