@@ -1,8 +1,8 @@
 import { Box, Button, Grid, makeStyles, Typography } from "@material-ui/core";
-import menu1 from '../../../assets/images/menu_section_1.jpg';
-import menu2 from '../../../assets/images/menu_section_2.jpg';
-import menu3 from '../../../assets/images/menu_section_3.jpg';
-import menu4 from '../../../assets/images/menu_section_4.jpg';
+import menu1 from '../../../assets/images/drinks/1.jpg';
+import menu2 from '../../../assets/images/drinks/2.jpg';
+import menu3 from '../../../assets/images/drinks/3.jpg';
+import menu4 from '../../../assets/images/drinks/4.jpg';
 import MenuItem from "./MenuItem";
 
 
