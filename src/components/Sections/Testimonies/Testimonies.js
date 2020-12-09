@@ -88,6 +88,7 @@ const Testimonies = () => {
 
                 {tesmonies.map(person => <Testimony
                     key={person.id}
+                    id={person.id}
                     authorName={person.name}
                     jobTitle={person.jobTitle}
                     profileImg={person.profileImg}

@@ -1,4 +1,5 @@
-import { makeStyles, Typography } from "@material-ui/core"
+import { Box, makeStyles, Typography } from "@material-ui/core"
+import clsx from 'clsx';
 
 const useStyles = makeStyles((theme) => ({
     testimonyCard: {
@@ -8,8 +9,10 @@ const useStyles = makeStyles((theme) => ({
         lineHeight: 1
     },
     cardbg: {
-        backgroundColor: theme.palette.primary.main,
-        padding: '2rem'
+        backgroundColor: theme.palette.primary.main
+    },
+    darkedbg: {
+        backgroundColor: theme.palette.primary.dark
     },
     text: {
         marginBottom: '1rem',
@@ -34,11 +37,11 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const Testimony = ({ authorName, jobTitle, profileImg, text }) => {
+const Testimony = ({ id, authorName, jobTitle, profileImg, text }) => {
     const classes = useStyles();
     return (
         <div className={classes.testimonyCard}>
-            <div className={classes.cardbg}>
+            <Box p={4} className={clsx(id % 2 ? classes.cardbg : classes.darkedbg)}>
                 <Typography className={classes.text}>
                     {text}
                 </Typography>
@@ -51,7 +54,7 @@ const Testimony = ({ authorName, jobTitle, profileImg, text }) => {
                         <Typography className={classes.jobTitle}>{jobTitle}</Typography>
                     </div>
                 </div>
-            </div>
+            </Box>
         </div>
     )
 }
