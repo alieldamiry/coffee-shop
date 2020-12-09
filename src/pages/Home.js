@@ -5,6 +5,7 @@ import Services from '../components/Sections/Services/Services';
 import Story from '../components/Sections/Story';
 import Achievements from '../components/Sections/Achievements/Achievements';
 import Products from '../components/Sections/Products/Products';
+import Testimonies from '../components/Sections/Testimonies/Testimonies';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <Menu />
             <Achievements />
             <Products />
+            <Testimonies />
         </>
     )
 }

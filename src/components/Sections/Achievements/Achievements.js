@@ -1,5 +1,5 @@
 import { Grid, makeStyles } from '@material-ui/core';
-import bgImg from '../../../assets/images/Backgrounds/achievements-bg.jpg';
+import bgImg from '../../../assets/images/backgrounds/achievements-bg.jpg';
 import Achievement from './Achievement';
 
 const useStyles = makeStyles((theme) => ({
