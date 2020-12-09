@@ -9,11 +9,12 @@ const useStyles = makeStyles((theme) => ({
     },
     cardbg: {
         backgroundColor: theme.palette.primary.main,
-        padding: '2rem',
-        // marginBottom: '1rem'
+        padding: '2rem'
     },
     text: {
-        marginBottom: '1rem'
+        marginBottom: '1rem',
+        fontSize: '0.9rem',
+        fontWeight: '300'
     },
     author: {
         display: 'flex'
@@ -47,7 +48,7 @@ const Testimony = ({ authorName, jobTitle, profileImg, text }) => {
                     </div>
                     <div>
                         <Typography>{authorName}</Typography>
-                        <Typography className={classes.jobTitle}>Illustrator Designer</Typography>
+                        <Typography className={classes.jobTitle}>{jobTitle}</Typography>
                     </div>
                 </div>
             </div>

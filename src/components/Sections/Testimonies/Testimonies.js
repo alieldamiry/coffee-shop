@@ -1,7 +1,10 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, Typography } from "@material-ui/core";
 import bgImg from '../../../assets/images/backgrounds/testimony-bg.jpg';
 import Testimony from "./Testimony";
 import person2Img from '../../../assets/images/persons/person_2.jpg';
+import person3Img from '../../../assets/images/persons/person_3.jpg';
+import person4Img from '../../../assets/images/persons/person_4.jpg';
+// import person4Img from '../../../assets/images/persons/person_4.jpg';
 
 const useStyles = makeStyles((theme) => ({
     testimony: {
@@ -11,7 +14,20 @@ const useStyles = makeStyles((theme) => ({
         backgroundAttachment: 'fixed',
         backgroundRepeat: 'no-repeat',
         color: '#ffffff',
-        padding: '0',
+        paddingTop: '4rem',
+    },
+    title: {
+        maxWidth: '600px',
+        margin: '0 auto 7rem',
+        textAlign: 'center',
+        '& h4': {
+            color: theme.palette.primary.main,
+            marginBottom: '1rem',
+            fontWeight: 600
+        }
+    },
+    description: {
+        opacity: 0.7
     },
     testimonyCards: {
         display: 'flex',
@@ -22,16 +38,66 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+const tesmonies = [
+    {
+        name: 'John Wick',
+        id: 1,
+        profileImg: person4Img,
+        jobTitle: 'Designer',
+        text: 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small.',
+    },
+    {
+        name: 'Louise Kelly',
+        id: 2,
+        profileImg: person2Img,
+        jobTitle: 'CEO of FSG',
+        text: 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.',
+    },
+    {
+        name: 'Bruce Jack',
+        id: 3,
+        profileImg: person3Img,
+        jobTitle: 'Developer',
+        text: 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name. ',
+    },
+    {
+        name: 'Ahmed Ali',
+        id: 4,
+        profileImg: person4Img,
+        jobTitle: 'Consultant',
+        text: 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however.',
+    },
+    {
+        name: 'Sami Walid',
+        id: 5,
+        profileImg: person2Img,
+        jobTitle: 'Developer',
+        text: 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name.',
+    },
+]
+
 const Testimonies = () => {
     const classes = useStyles();
     return (
         <section className={classes.testimony}>
+            <div className={classes.title}>
+                <Typography component="h4" variant="h4">CUSTOMERS SAYS</Typography>
+                <Typography className={classes.description}>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</Typography>
+            </div>
             <div className={classes.testimonyCards}>
-                <Testimony profileImg={person2Img} authorName="John Wick" text="Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small." />
-                <Testimony text="Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar." />
-                <Testimony text="Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name." />
-                <Testimony text="Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however." />
-                <Testimony text="“Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name." />
+
+                {tesmonies.map(person => <Testimony
+                    key={person.id}
+                    authorName={person.name}
+                    jobTitle={person.jobTitle}
+                    profileImg={person.profileImg}
+                    text={person.text}
+                />)}
+
+                {/* <Testimony profileImg={person2Img} 
+            authorName="John Wick" 
+            text="Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small." /> */}
+
             </div>
         </section>
     )
