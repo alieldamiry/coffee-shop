@@ -7,19 +7,17 @@ import Achievements from '../components/Sections/Achievements/Achievements';
 import Products from '../components/Sections/Products/Products';
 import Testimonies from '../components/Sections/Testimonies/Testimonies';
 
-const Home = () => {
-    return (
-        <>
-            <Hero />
-            <IntroInfo />
-            <Story />
-            <Services />
-            <Menu />
-            <Achievements />
-            <Products />
-            <Testimonies />
-        </>
-    )
-}
+const Home = () => (
+  <>
+    <Hero />
+    <IntroInfo />
+    <Story />
+    <Services />
+    <Menu />
+    <Achievements />
+    <Products />
+    <Testimonies />
+  </>
+);
 
-export default Home
+export default Home;

@@ -1,51 +1,52 @@
-const { createMuiTheme } = require("@material-ui/core");
+import { createMuiTheme } from '@material-ui/core';
+
 const theme = createMuiTheme({
-    // Palette
-    palette: {
-        primary: {
-            main: '#c49b63'
-        },
+  // Palette
+  palette: {
+    primary: {
+      main: '#c49b63',
     },
-    // Typography
-    typography: {
-        fontFamily: 'Poppins',
+  },
+  // Typography
+  typography: {
+    fontFamily: 'Poppins',
+  },
+  // Props
+  props: {
+    MuiLink: {
+      underline: 'none',
     },
-    //Props
-    props: {
-        MuiLink: {
-            underline: 'none'
-        },
-        MuiButton: {
-            disableRipple: true
-        },
+    MuiButton: {
+      disableRipple: true,
     },
-    //Shape
-    shape: {
-        borderRadius: 0
+  },
+  // Shape
+  shape: {
+    borderRadius: 0,
+  },
+
+  // Overrides
+  overrides: {
+    MuiPaper: {
+      root: {
+        color: '#ffffff',
+        backgroundColor: '#0b0b0b',
+      },
     },
-    
-    //Overrides
-    overrides: {
-        MuiPaper: {
-            root: {
-                color: '#ffffff',
-                backgroundColor: '#0b0b0b'
-            }
-        },
-        MuiButton: {
-            root: {
-                margin: 2,
-                padding: 16,
-                fontSize: 12
-            },
-            outlined: {
-                margin: 2,
-                padding: 16,
-                fontSize: 12
-            },
-        },
+    MuiButton: {
+      root: {
+        margin: 2,
+        padding: 16,
+        fontSize: 12,
+      },
+      outlined: {
+        margin: 2,
+        padding: 16,
+        fontSize: 12,
+      },
     },
-    // shadows: ["none"],
-})
+  },
+  // shadows: ["none"],
+});
 
 export default theme;
