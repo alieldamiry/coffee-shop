@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -32,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const NavBar = () => {
+const NavBar = ({ toggleLanguage }) => {
   const classes = useStyles();
   const [showSideDrawer, setShowSideDrawer] = useState(false);
   const toggleSideDrawer = () => {
@@ -41,13 +42,17 @@ const NavBar = () => {
   return (
     <Container fixed>
       <AppBar className={classes.appBar} position="fixed">
-        <SideDrawer showSideDrawer={showSideDrawer} setShowSideDrawer={setShowSideDrawer} />
+        <SideDrawer
+          toggleLanguage={toggleLanguage}
+          showSideDrawer={showSideDrawer}
+          setShowSideDrawer={setShowSideDrawer}
+        />
         <Toolbar>
           <div className={classes.title}>
             <Logo />
           </div>
           <div className={classes.desktopNavLinks}>
-            <NavLinks />
+            <NavLinks toggleLanguage={toggleLanguage} />
           </div>
           <IconButton className={classes.menuButton} onClick={toggleSideDrawer} color="inherit" aria-label="menu">
             <MenuIcon />
@@ -56,5 +61,8 @@ const NavBar = () => {
       </AppBar>
     </Container>
   );
+};
+NavBar.propTypes = {
+  toggleLanguage: PropTypes.func.isRequired,
 };
 export default NavBar;

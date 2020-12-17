@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Badge, Link, makeStyles } from '@material-ui/core';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
@@ -26,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const NavLinks = () => {
+
+const NavLinks = ({ toggleLanguage }) => {
   const classes = useStyles();
   return (
 
@@ -37,6 +39,13 @@ const NavLinks = () => {
       <Link to="/" className={classes.navLink}>ABOUT</Link>
       <Link to="/" className={classes.navLink}>SHOP</Link>
       <Link to="/" className={classes.navLink}>CONTACT</Link>
+      <button
+        className={classes.navLink}
+        type="button"
+        onClick={toggleLanguage}
+      >
+        toggle lang
+      </button>
       <Link to="/" className={classes.navLink}>
         <Badge badgeContent={1} color="secondary">
           <ShoppingCartIcon />
@@ -46,4 +55,7 @@ const NavLinks = () => {
   );
 };
 
+NavLinks.propTypes = {
+  toggleLanguage: PropTypes.func.isRequired,
+};
 export default NavLinks;

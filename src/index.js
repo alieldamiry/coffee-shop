@@ -11,6 +11,7 @@ ReactDOM.render(
       <App />
     </RTL>
   </React.StrictMode>,
+
   document.getElementById('root'),
 );
 
