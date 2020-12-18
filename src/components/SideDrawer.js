@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
 
 }));
 
-const SideDrawer = ({ showSideDrawer, setShowSideDrawer, toggleLanguage }) => {
+const SideDrawer = ({ showSideDrawer, setShowSideDrawer }) => {
   const classes = useStyles();
   return (
     <Drawer anchor="right" open={showSideDrawer} onClose={() => setShowSideDrawer(false)}>
@@ -21,7 +21,7 @@ const SideDrawer = ({ showSideDrawer, setShowSideDrawer, toggleLanguage }) => {
         <div className={classes.drawerHeader}>
           <Logo />
         </div>
-        <NavLinks toggleLanguage={toggleLanguage} />
+        <NavLinks />
       </div>
     </Drawer>
   );
@@ -30,6 +30,5 @@ const SideDrawer = ({ showSideDrawer, setShowSideDrawer, toggleLanguage }) => {
 SideDrawer.propTypes = {
   showSideDrawer: PropTypes.bool.isRequired,
   setShowSideDrawer: PropTypes.func.isRequired,
-  toggleLanguage: PropTypes.func.isRequired,
 };
 export default SideDrawer;
