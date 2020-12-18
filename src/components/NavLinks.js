@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import PropTypes from 'prop-types';
 import { Badge, Link, makeStyles } from '@material-ui/core';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
@@ -19,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'block',
     transition: '0.2s',
     color: 'inherit',
+    background: 'none',
+    outline: 'none',
+    border: 'none',
     '&:hover': {
       color: theme.palette.primary.main,
     },
@@ -39,13 +44,13 @@ const NavLinks = ({ toggleLanguage }) => {
       <Link to="/" className={classes.navLink}>ABOUT</Link>
       <Link to="/" className={classes.navLink}>SHOP</Link>
       <Link to="/" className={classes.navLink}>CONTACT</Link>
-      <button
+      <div
         className={classes.navLink}
         type="button"
         onClick={toggleLanguage}
       >
-        toggle lang
-      </button>
+        EN
+      </div>
       <Link to="/" className={classes.navLink}>
         <Badge badgeContent={1} color="secondary">
           <ShoppingCartIcon />
