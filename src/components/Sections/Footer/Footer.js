@@ -3,7 +3,6 @@ import RoomIcon from '@material-ui/icons/Room';
 import PhoneIcon from '@material-ui/icons/Phone';
 import MailIcon from '@material-ui/icons/Mail';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
-import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles(() => ({
   footer: {
@@ -49,15 +48,15 @@ const useStyles = makeStyles(() => ({
 
 const Footer = () => {
   const classes = useStyles();
-  const { t } = useTranslation();
 
   return (
     <footer className={classes.footer}>
       <Grid container spacing={5}>
         <Grid item xs={12} md={5}>
-          <Typography className={classes.itemTitle} component="h4" vairant="h4">{t('footer.about.title')}</Typography>
+          <Typography className={classes.itemTitle} component="h4" vairant="h4">ABOUT US</Typography>
           <Typography className={classes.itemParagraph}>
-            {t('footer.about.content')}
+            Far far away, behind the word mountains,
+            far from the countries Vokalia and Consonantia, there live the blind texts.
           </Typography>
           <div className={classes.socialIcons}>
             <FaFacebookF className={classes.socialIcon} />
@@ -66,20 +65,20 @@ const Footer = () => {
           </div>
         </Grid>
         <Grid item xs={12} md={2}>
-          <Typography className={classes.itemTitle} component="h4" vairant="h4">{t('footer.services.title')}</Typography>
+          <Typography className={classes.itemTitle} component="h4" vairant="h4">SERVICES</Typography>
           <ul className={classes.serviceLinks}>
-            <li><Link to="/" className={classes.serviceLink}>{t('footer.services.0')}</Link></li>
-            <li><Link to="/" className={classes.serviceLink}>{t('footer.services.1')}</Link></li>
-            <li><Link to="/" className={classes.serviceLink}>{t('footer.services.2')}</Link></li>
-            <li><Link to="/" className={classes.serviceLink}>{t('footer.services.3')}</Link></li>
+            <li><Link to="/" className={classes.serviceLink}>Cooked</Link></li>
+            <li><Link to="/" className={classes.serviceLink}>Deliver</Link></li>
+            <li><Link to="/" className={classes.serviceLink}>Quality Foods</Link></li>
+            <li><Link to="/" className={classes.serviceLink}>Mixed</Link></li>
           </ul>
         </Grid>
         <Grid item xs={12} md={5}>
-          <Typography className={classes.itemTitle} component="h4" vairant="h4">{t('footer.info.title')}</Typography>
+          <Typography className={classes.itemTitle} component="h4" vairant="h4">HAVE A QUESTIONS?</Typography>
           <div className={classes.contact}>
             <RoomIcon className={classes.contactIcon} />
             <Typography className={classes.itemParagraph}>
-              {t('footer.info.address')}
+              203 Fake St. Mountain View, San Francisco, California, Egypt
             </Typography>
           </div>
           <div className={classes.contact}>
@@ -88,7 +87,7 @@ const Footer = () => {
           </div>
           <div className={classes.contact}>
             <MailIcon className={classes.contactIcon} />
-            <Typography className={classes.itemParagraph}>ali.eldamiry@gmail.com</Typography>
+            <Typography className={classes.itemParagraph}>+201097034883</Typography>
           </div>
         </Grid>
       </Grid>
