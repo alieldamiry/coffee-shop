@@ -45,5 +45,23 @@
             "title": "QUALITY COFFEE",
             "content": "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic."
         }
+    },
+    "menuSection": {
+        "title": "OUR MENU",
+        "content": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."
+    },
+    "achievements": {
+        "0": {
+            "title": "Coffee Branches"
+        },
+        "1": {
+            "title": "Number of Awards"
+        },
+        "2": {
+            "title": "Happy Customer"
+        },
+        "3": {
+            "title": "Staff"
+        }
     }
 }

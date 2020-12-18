@@ -1,4 +1,5 @@
 import { Grid, makeStyles } from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
 import bgImg from '../../../assets/images/backgrounds/achievements-bg.jpg';
 import Achievement from './Achievement';
 
@@ -17,13 +18,14 @@ const useStyles = makeStyles(() => ({
 
 const Achievements = () => {
   const classes = useStyles();
+  const { t } = useTranslation();
   return (
     <section className={classes.achievements}>
       <Grid container>
-        <Achievement number={100} title="Coffee Branches" />
-        <Achievement number={85} title="Number of Awards" />
-        <Achievement number={10567} title="Happy Customer" />
-        <Achievement number={900} title="Staff" />
+        <Achievement number={100} title={t('achievements.0.title')} />
+        <Achievement number={85} title={t('achievements.1.title')} />
+        <Achievement number={85} title={t('achievements.2.title')} />
+        <Achievement number={85} title={t('achievements.3.title')} />
       </Grid>
     </section>
   );
