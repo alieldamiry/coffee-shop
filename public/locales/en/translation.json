@@ -1,0 +1,11 @@
+{
+    "navbar": {
+        "home": "HOME",
+        "menu": "MENU",
+        "services": "SERVICES",
+        "about": "ABOUT",
+        "shop": "SHOP",
+        "contact": "CONTACT",
+        "langToggler": "عربي"
+    }
+}

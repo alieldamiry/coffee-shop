@@ -1,0 +1,11 @@
+{
+    "navbar": {
+        "home": "الرئيسية",
+        "menu": "القائمة",
+        "services": "خدماتنا",
+        "about": "من نحن",
+        "shop": "تسوق",
+        "contact": "اتصل بنا",
+        "langToggler": "EN"
+    }
+}
