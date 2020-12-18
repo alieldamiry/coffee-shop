@@ -1,5 +1,6 @@
 import { Button, Grid, makeStyles, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles((theme) => ({
   productImg: {
@@ -29,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Product = ({ name, image, description, price }) => {
   const classes = useStyles();
+  const { t } = useTranslation();
   return (
     <Grid item xs={12} sm={6} lg={3}>
       <div className={classes.product}>
@@ -41,7 +43,7 @@ const Product = ({ name, image, description, price }) => {
           $
           {price}
         </Typography>
-        <Button className={classes.addBtn}>Add to Cart</Button>
+        <Button className={classes.addBtn}>{t('productsSection.add')}</Button>
       </div>
     </Grid>
   );

@@ -1,4 +1,5 @@
 import { Grid, makeStyles, Typography } from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
 import productImg1 from '../../../assets/images/drinks/1.jpg';
 import productImg2 from '../../../assets/images/drinks/2.jpg';
 import productImg3 from '../../../assets/images/drinks/3.jpg';
@@ -28,39 +29,38 @@ const useStyles = makeStyles((theme) => ({
 
 const Products = () => {
   const classes = useStyles();
+  const { t } = useTranslation();
   return (
     <section className={classes.Products}>
       <div className={classes.title}>
-        <Typography component="h4" variant="h4">BEST COFFEE SELLERS</Typography>
+        <Typography component="h4" variant="h4">{t('productsSection.title')}</Typography>
         <Typography className={classes.description}>
-          Far far away, behind the word mountains,
-          far from the countries Vokalia and Consonantia,
-          there live the blind texts.
+          {t('productsSection.caption')}
         </Typography>
       </div>
       <Grid container spacing={5}>
         <Product
-          name="COFFEE CAPUCCINO"
+          name={t('productsSection.products.0.name')}
           image={productImg1}
-          description="A small river named Duden flows by their place and supplies"
+          description={t('productsSection.products.0.description')}
           price={12}
         />
         <Product
-          name="COFFEE CAPUCCINO"
+          name={t('productsSection.products.0.name')}
           image={productImg2}
-          description="A small river named Duden flows by their place and supplies"
+          description={t('productsSection.products.0.description')}
           price={10}
         />
         <Product
-          name="COFFEE CAPUCCINO"
+          name={t('productsSection.products.0.name')}
           image={productImg3}
-          description="A small river named Duden flows by their place and supplies"
+          description={t('productsSection.products.0.description')}
           price={10}
         />
         <Product
-          name="COFFEE CAPUCCINO"
+          name={t('productsSection.products.0.name')}
           image={productImg4}
-          description="A small river named Duden flows by their place and supplies"
+          description={t('productsSection.products.0.description')}
           price={10}
         />
       </Grid>

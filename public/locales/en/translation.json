@@ -63,5 +63,16 @@
         "3": {
             "title": "Staff"
         }
+    },
+    "productsSection": {
+        "title": "BEST COFFEE SELLERS",
+        "caption": " Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+        "products": {
+            "0": {
+                "name": "COFFEE CAPUCCINO",
+                "description": "A small river named Duden flows by their place and supplies"
+            }
+        },
+        "add": "Add to Cart"
     }
 }
