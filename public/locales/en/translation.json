@@ -74,36 +74,5 @@
             }
         },
         "add": "Add to Cart"
-    },
-    "testimoniesSection": {
-        "title": "CUSTOMERS SAYS",
-        "description": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-        "testimonies": {
-            "0": {
-                "name": "John Wick",
-                "jobTitle": "Designer",
-                "text": "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small."
-            },
-            "1": {
-                "name": "Badr yossef",
-                "jobTitle": "CEO of FSG",
-                "text": "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."
-            },
-            "2": {
-                "name": "Bruce Jack",
-                "jobTitle": "Developer",
-                "text": "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name."
-            },
-            "3": {
-                "name": "Ahmed Ali",
-                "jobTitle": "Consultant",
-                "text": "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however."
-            },
-            "4": {
-                "name": "Sami Walid",
-                "jobTitle": "Developer",
-                "text": "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name."
-            }
-        }
     }
 }
