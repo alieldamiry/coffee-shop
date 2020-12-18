@@ -7,5 +7,11 @@
         "shop": "SHOP",
         "contact": "CONTACT",
         "langToggler": "عربي"
+    },
+    "hero": {
+        "title": "AMAZING TASTE & BEAUTIFUL PLACE",
+        "caption": "A small river named Duden flows by their place and supplies it with the necessary regelialia.",
+        "shop": "Shop Now",
+        "menu": "View Menu"
     }
 }
