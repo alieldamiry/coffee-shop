@@ -1,17 +1,14 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import RTL from './RTL';
-import './i18next';
 
 ReactDOM.render(
   <React.StrictMode>
     <RTL>
-      <Suspense fallback={<div>Loading....</div>}>
-        <App />
-      </Suspense>
+      <App />
     </RTL>
   </React.StrictMode>,
 

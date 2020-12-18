@@ -3,7 +3,6 @@
 import PropTypes from 'prop-types';
 import { Badge, Link, makeStyles } from '@material-ui/core';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles((theme) => ({
   navLinks: {
@@ -37,23 +36,21 @@ const useStyles = makeStyles((theme) => ({
 
 const NavLinks = ({ toggleLanguage }) => {
   const classes = useStyles();
-  const { t } = useTranslation();
-
   return (
 
     <nav className={classes.navLinks}>
-      <Link to="/" className={classes.navLink}>{t('navbar.home')}</Link>
-      <Link to="/" className={classes.navLink}>{t('navbar.menu')}</Link>
-      <Link to="/" className={classes.navLink}>{t('navbar.services')}</Link>
-      <Link to="/" className={classes.navLink}>{t('navbar.about')}</Link>
-      <Link to="/" className={classes.navLink}>{t('navbar.shop')}</Link>
-      <Link to="/" className={classes.navLink}>{t('navbar.contact')}</Link>
+      <Link to="/" className={classes.navLink}>HOME</Link>
+      <Link to="/" className={classes.navLink}>MENU</Link>
+      <Link to="/" className={classes.navLink}>SERVICES</Link>
+      <Link to="/" className={classes.navLink}>ABOUT</Link>
+      <Link to="/" className={classes.navLink}>SHOP</Link>
+      <Link to="/" className={classes.navLink}>CONTACT</Link>
       <div
         className={classes.navLink}
         type="button"
         onClick={toggleLanguage}
       >
-        {t('navbar.langToggler')}
+        EN
       </div>
       <Link to="/" className={classes.navLink}>
         <Badge badgeContent={1} color="secondary">
