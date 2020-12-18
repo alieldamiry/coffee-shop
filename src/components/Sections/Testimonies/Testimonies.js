@@ -1,10 +1,10 @@
 import { makeStyles, Typography } from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
 import bgImg from '../../../assets/images/backgrounds/testimony-bg.jpg';
 import Testimony from './Testimony';
 import person2Img from '../../../assets/images/persons/person_2.jpg';
 import person3Img from '../../../assets/images/persons/person_3.jpg';
 import person4Img from '../../../assets/images/persons/person_4.jpg';
-// import person4Img from '../../../assets/images/persons/person_4.jpg';
 
 const useStyles = makeStyles((theme) => ({
   testimony: {
@@ -38,67 +38,53 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-const tesmonies = [
-  {
-    name: 'John Wick',
-    id: 1,
-    profileImg: person4Img,
-    jobTitle: 'Designer',
-    text: 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small.',
-  },
-  {
-    name: 'Louise Kelly',
-    id: 2,
-    profileImg: person2Img,
-    jobTitle: 'CEO of FSG',
-    text: 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.',
-  },
-  {
-    name: 'Bruce Jack',
-    id: 3,
-    profileImg: person3Img,
-    jobTitle: 'Developer',
-    text: 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name. ',
-  },
-  {
-    name: 'Ahmed Ali',
-    id: 4,
-    profileImg: person4Img,
-    jobTitle: 'Consultant',
-    text: 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however.',
-  },
-  {
-    name: 'Sami Walid',
-    id: 5,
-    profileImg: person2Img,
-    jobTitle: 'Developer',
-    text: 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name.',
-  },
-];
-
 const Testimonies = () => {
   const classes = useStyles();
+  const { t } = useTranslation();
   return (
     <section className={classes.testimony}>
       <div className={classes.title}>
-        <Typography component="h4" variant="h4">CUSTOMERS SAYS</Typography>
+        <Typography component="h4" variant="h4">{t('testimoniesSection.title')}</Typography>
         <Typography className={classes.description}>
-          Far far away, behind the word mountains,
-          far from the countries Vokalia and Consonantia, there live the blind texts.
+          {t('testimoniesSection.description')}
         </Typography>
       </div>
       <div className={classes.testimonyCards}>
-
-        {tesmonies.map((person) => (
-          <Testimony
-            key={person.id}
-            id={person.id}
-            authorName={person.name}
-            jobTitle={person.jobTitle}
-            profileImg={person.profileImg}
-            text={person.text}
-          />
-        ))}
+        <Testimony
+          id={1}
+          authorName={t('testimoniesSection.testimonies.0.name')}
+          jobTitle={t('testimoniesSection.testimonies.0.jobTitle')}
+          profileImg={person2Img}
+          text={t('testimoniesSection.testimonies.0.text')}
+        />
+        <Testimony
+          id={2}
+          authorName={t('testimoniesSection.testimonies.1.name')}
+          jobTitle={t('testimoniesSection.testimonies.1.jobTitle')}
+          profileImg={person3Img}
+          text={t('testimoniesSection.testimonies.1.text')}
+        />
+        <Testimony
+          id={3}
+          authorName={t('testimoniesSection.testimonies.2.name')}
+          jobTitle={t('testimoniesSection.testimonies.2.jobTitle')}
+          profileImg={person4Img}
+          text={t('testimoniesSection.testimonies.2.text')}
+        />
+        <Testimony
+          id={4}
+          authorName={t('testimoniesSection.testimonies.3.name')}
+          jobTitle={t('testimoniesSection.testimonies.3.jobTitle')}
+          profileImg={person2Img}
+          text={t('testimoniesSection.testimonies.3.text')}
+        />
+        <Testimony
+          id={5}
+          authorName={t('testimoniesSection.testimonies.4.name')}
+          jobTitle={t('testimoniesSection.testimonies.4.jobTitle')}
+          profileImg={person3Img}
+          text={t('testimoniesSection.testimonies.4.text')}
+        />
       </div>
     </section>
   );
