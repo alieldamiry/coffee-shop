@@ -1,4 +1,5 @@
 import { makeStyles, Typography } from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
 import storyImg from '../../assets/images/backgrounds/story-bg.jpg';
 
 const useStyles = makeStyles((theme) => ({
@@ -49,23 +50,18 @@ const useStyles = makeStyles((theme) => ({
 
 const Story = () => {
   const classes = useStyles();
+  const { t } = useTranslation();
+
   return (
     <section className={classes.story}>
       <div className={classes.storyBg} />
       <div className={classes.content}>
         <div className={classes.card}>
           <Typography className={classes.title} component="h4" variant="h4" color="primary">
-            OUR STORY
+            {t('story.title')}
           </Typography>
           <Typography className={classes.paragraph}>
-            On her way she met a copy. The copy warned the Little Blind Text,
-            that where it came from it would have been rewritten a thousand times and
-            everything that was left from its origin would be the word and
-            and the Little Blind Text should turn around and return to its own,
-            safe country. But nothing the copy said could convince her and so
-            it didn’t take long until a few insidious Copy Writers ambushed her,
-            made her drunk with Longe and Parole and dragged her into their agency,
-            where they abused her for their.
+            {t('story.content')}
           </Typography>
         </div>
       </div>
