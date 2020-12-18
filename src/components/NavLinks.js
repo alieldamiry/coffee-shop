@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
     background: 'none',
     outline: 'none',
     border: 'none',
+    cursor: 'pointer',
     '&:hover': {
       color: theme.palette.primary.main,
     },
