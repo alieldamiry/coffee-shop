@@ -1,5 +1,4 @@
 import { Grid, makeStyles } from '@material-ui/core';
-import { useTranslation } from 'react-i18next';
 import coffeeBean from '../../../assets/images/services/coffee-bean.png';
 import cargoTruck from '../../../assets/images/services/cargo-truck.png';
 import choices from '../../../assets/images/services/choices.png';
@@ -19,25 +18,23 @@ const useStyles = makeStyles((theme) => ({
 
 const Services = () => {
   const classes = useStyles();
-  const { t } = useTranslation();
-
   return (
     <section className={classes.services}>
       <Grid container className={classes.cardsContainer} direction="row" spacing={0}>
         <Service
           ServiceImg={choices}
-          title={t('services.0.title')}
-          contnet={t('services.0.content')}
+          title="EASY TO ORDER"
+          contnet="Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic."
         />
         <Service
           ServiceImg={cargoTruck}
-          title={t('services.1.title')}
-          contnet={t('services.1.content')}
+          title="FASTEST DELIVERY"
+          contnet="Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic."
         />
         <Service
           ServiceImg={coffeeBean}
-          title={t('services.2.title')}
-          contnet={t('services.2.content')}
+          title="QUALITY COFFEE"
+          contnet="Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic."
         />
       </Grid>
     </section>
