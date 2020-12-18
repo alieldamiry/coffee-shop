@@ -13,19 +13,5 @@
         "caption": "A small river named Duden flows by their place and supplies it with the necessary regelialia.",
         "shop": "Shop Now",
         "menu": "View Menu"
-    },
-    "introInfo": {
-        "0": {
-            "title": "000 (123) 456 7890",
-            "content": "A small river named Duden flows by their place and supplies."
-        },
-        "1": {
-            "title": "198 West 21th Street",
-            "content": "203 Fake St. Mountain View, San Francisco, California, USA"
-        },
-        "2": {
-            "title": "Open Monday-Friday",
-            "content": "8:00am - 9:00pm"
-        }
     }
 }

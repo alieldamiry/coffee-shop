@@ -2,7 +2,6 @@ import { Grid, makeStyles, Paper } from '@material-ui/core';
 import PhoneIcon from '@material-ui/icons/Phone';
 import MyLocationIcon from '@material-ui/icons/MyLocation';
 import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
-import { useTranslation } from 'react-i18next';
 import InfoCard from './InfoCard';
 
 const useStyles = makeStyles(() => ({
@@ -15,7 +14,6 @@ const useStyles = makeStyles(() => ({
 
 const IntroInfo = () => {
   const classes = useStyles();
-  const { t } = useTranslation();
   return (
     <Paper>
       <section className={classes.IntroInfo}>
@@ -26,18 +24,18 @@ const IntroInfo = () => {
         >
           <InfoCard
             icon={<PhoneIcon color="primary" fontSize="small" style={{ marginTop: '3px' }} />}
-            title={t('introInfo.0.title')}
-            content={t('introInfo.0.content')}
+            title="This is a title"
+            content="A small river named Duden flows by their place and supplies."
           />
           <InfoCard
             icon={<MyLocationIcon color="primary" fontSize="small" style={{ marginTop: '3px' }} />}
-            title={t('introInfo.1.title')}
-            content={t('introInfo.1.content')}
+            title="198 West 21th Street"
+            content="203 Fake St. Mountain View, San Francisco, California, USA"
           />
           <InfoCard
             icon={<QueryBuilderIcon color="primary" fontSize="small" style={{ marginTop: '3px' }} />}
-            title={t('introInfo.2.title')}
-            content={t('introInfo.2.content')}
+            title="Open Monday-Friday"
+            content="8:00am - 9:00pm"
           />
         </Grid>
       </section>
