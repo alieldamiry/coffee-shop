@@ -1,5 +1,4 @@
 import { Box, Button, Grid, makeStyles, Typography } from '@material-ui/core';
-import { useTranslation } from 'react-i18next';
 import menu1 from '../../../assets/images/drinks/1.jpg';
 import menu2 from '../../../assets/images/drinks/2.jpg';
 import menu3 from '../../../assets/images/drinks/3.jpg';
@@ -26,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Menu = () => {
   const classes = useStyles();
-  const { t } = useTranslation();
   return (
     <section className={classes.menu}>
       <Grid container>
@@ -34,10 +32,13 @@ const Menu = () => {
           <Box p={4}>
             <Box mb={3}>
               <Typography className={classes.title} variant="h4" component="h4">
-                {t('menuSection.title')}
+                OUR MENU
               </Typography>
               <Typography>
-                {t('menuSection.content')}
+                Far far away, behind the word mountains, far from the countries Vokalia
+                and Consonantia, there live the blind texts.
+                Separated they live in Bookmarksgrove right at the coast of the Semantics,
+                a large language ocean.
               </Typography>
             </Box>
             <Button variant="outlined" color="primary">View Full Menu</Button>
