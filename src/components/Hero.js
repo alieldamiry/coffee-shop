@@ -1,5 +1,4 @@
 import { Button, makeStyles, Typography } from '@material-ui/core';
-import { useTranslation } from 'react-i18next';
 import HeroBg from '../assets/images/backgrounds/hero-bg.jpg';
 
 const useStyles = makeStyles(() => ({
@@ -24,18 +23,18 @@ const useStyles = makeStyles(() => ({
 }));
 const Hero = () => {
   const classes = useStyles();
-  const { t } = useTranslation();
 
   return (
     <div className={classes.hero}>
       <div className={classes.inner}>
-        <Typography variant="h4" component="h3">{t('hero.title')}</Typography>
+        <Typography variant="h4" component="h3">AMAZING TASTE & BEAUTIFUL PLACE</Typography>
         <p>
-          {t('hero.caption')}
+          A small river named Duden flows by their place and supplies it
+          with the necessary regelialia.
         </p>
         <div>
-          <Button variant="contained" color="primary">{t('hero.shop')}</Button>
-          <Button variant="outlined" color="primary">{t('hero.menu')}</Button>
+          <Button variant="contained" color="primary">Shop Now</Button>
+          <Button variant="outlined" color="primary">View Menu</Button>
         </div>
       </div>
     </div>
