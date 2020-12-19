@@ -1,16 +1,23 @@
-import './App.css';
-import NavBar from './components/Appbar';
-import Footer from './components/Sections/Footer/Footer';
+import { makeStyles } from '@material-ui/core';
+import Layout from './components/Layout';
 import Home from './pages/Home';
 
-function App() {
+const useStyles = makeStyles(() => ({
+  App: {
+    minHeight: '100%',
+    display: 'grid',
+    gridTemplateRows: 'auto 1fr auto',
+  },
+}));
+const App = () => {
+  const classes = useStyles();
   return (
-    <>
-      <NavBar />
-      <Home />
-      <Footer />
-    </>
+    <div className={classes.App}>
+      <Layout>
+        <Home />
+      </Layout>
+    </div>
   );
-}
+};
 
 export default App;
