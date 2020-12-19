@@ -1,6 +1,13 @@
 import { makeStyles } from '@material-ui/core';
+import { Switch, Route } from 'react-router-dom';
 import Layout from './components/Layout';
+import About from './pages/About';
 import Home from './pages/Home';
+import Services from './pages/Services';
+import Cart from './pages/Cart';
+import Menu from './pages/Menu';
+import Contact from './pages/Contact';
+import Shop from './pages/Shop';
 
 const useStyles = makeStyles(() => ({
   App: {
@@ -14,7 +21,15 @@ const App = () => {
   return (
     <div className={classes.App}>
       <Layout>
-        <Home />
+        <Switch>
+          <Route path="/cart" component={Cart} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/shop" component={Shop} />
+          <Route path="/about" component={About} />
+          <Route path="/services" component={Services} />
+          <Route path="/menu" component={Menu} />
+          <Route path="/" component={Home} />
+        </Switch>
       </Layout>
     </div>
   );

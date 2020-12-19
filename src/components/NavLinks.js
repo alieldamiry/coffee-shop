@@ -1,5 +1,6 @@
 import { Badge, Link, makeStyles } from '@material-ui/core';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import { Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   navLinks: {
@@ -31,13 +32,13 @@ const NavLinks = () => {
   return (
 
     <nav className={classes.navLinks}>
-      <Link to="/" className={classes.navLink}>HOME</Link>
-      <Link to="/" className={classes.navLink}>MENU</Link>
-      <Link to="/" className={classes.navLink}>SERVICES</Link>
-      <Link to="/" className={classes.navLink}>ABOUT</Link>
-      <Link to="/" className={classes.navLink}>SHOP</Link>
-      <Link to="/" className={classes.navLink}>CONTACT</Link>
-      <Link to="/" className={classes.navLink}>
+      <Link component={RouterLink} to="/" className={classes.navLink}>HOME</Link>
+      <Link component={RouterLink} to="/menu" className={classes.navLink}>MENU</Link>
+      <Link component={RouterLink} to="/services" className={classes.navLink}>SERVICES</Link>
+      <Link component={RouterLink} to="/about" className={classes.navLink}>ABOUT</Link>
+      <Link component={RouterLink} to="/shop" className={classes.navLink}>SHOP</Link>
+      <Link component={RouterLink} to="/contact" className={classes.navLink}>CONTACT</Link>
+      <Link component={RouterLink} to="/cart" className={classes.navLink}>
         <Badge badgeContent={1} color="secondary">
           <ShoppingCartIcon />
         </Badge>
