@@ -1,4 +1,5 @@
 import { Breadcrumbs, Link, makeStyles, Typography } from '@material-ui/core';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles(() => ({
   inner: {
@@ -12,7 +13,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const HomeInner = () => {
+const Inner = ({ currentPage }) => {
   const classes = useStyles();
   return (
     <div className={classes.inner}>
@@ -25,11 +26,13 @@ const HomeInner = () => {
           href="/menu"
           aria-current="page"
         >
-          Menu
+          {currentPage}
         </Link>
       </Breadcrumbs>
     </div>
   );
 };
-
-export default HomeInner;
+Inner.propTypes = {
+  currentPage: PropTypes.string.isRequired,
+};
+export default Inner;

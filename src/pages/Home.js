@@ -1,5 +1,6 @@
 import Menu from '../components/Sections/Menu/Menu';
 import Hero from '../components/Sections/Hero/Hero';
+import HomeInner from '../components/Sections/Hero/HomeInner';
 import IntroInfo from '../components/IntroInfo/IntroInfo';
 import Services from '../components/Sections/Services/Services';
 import Story from '../components/Sections/Story';
@@ -9,7 +10,9 @@ import Testimonies from '../components/Sections/Testimonies/Testimonies';
 
 const Home = () => (
   <>
-    <Hero />
+    <Hero>
+      <HomeInner />
+    </Hero>
     <IntroInfo />
     <Story />
     <Services />

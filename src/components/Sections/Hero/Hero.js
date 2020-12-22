@@ -1,7 +1,5 @@
 import { makeStyles } from '@material-ui/core';
 import HeroBg from '../../../assets/images/backgrounds/hero-bg.jpg';
-// import Inner from './Inner';
-import HomeInner from './HomeInner';
 
 const useStyles = makeStyles(() => ({
   hero: {
@@ -17,13 +15,12 @@ const useStyles = makeStyles(() => ({
     textAlign: 'center',
   },
 }));
-const Hero = () => {
+const Hero = ({ children }) => {
   const classes = useStyles();
 
   return (
     <section className={classes.hero}>
-      <HomeInner />
-      {/* <Inner /> */}
+      {children}
     </section>
   );
 };
