@@ -1,7 +1,12 @@
+import Hero from '../components/Sections/Hero/Hero';
+import Inner from '../components/Sections/Hero/Inner';
+
 const Menu = () => (
-  <div>
-    Menu page
-  </div>
+  <>
+    <Hero>
+      <Inner currentPage="Menu" />
+    </Hero>
+  </>
 );
 
 export default Menu;
