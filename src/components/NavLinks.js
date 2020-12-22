@@ -33,7 +33,6 @@ const NavLinks = () => {
 
     <nav className={classes.navLinks}>
       <Link component={RouterLink} to="/" className={classes.navLink}>HOME</Link>
-      <Link component={RouterLink} to="/menu" className={classes.navLink}>MENU</Link>
       <Link component={RouterLink} to="/services" className={classes.navLink}>SERVICES</Link>
       <Link component={RouterLink} to="/about" className={classes.navLink}>ABOUT</Link>
       <Link component={RouterLink} to="/shop" className={classes.navLink}>SHOP</Link>

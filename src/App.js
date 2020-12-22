@@ -5,7 +5,6 @@ import About from './pages/About';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Cart from './pages/Cart';
-import Menu from './pages/Menu';
 import Contact from './pages/Contact';
 import Shop from './pages/Shop';
 
@@ -27,7 +26,6 @@ const App = () => {
           <Route path="/shop" component={Shop} />
           <Route path="/about" component={About} />
           <Route path="/services" component={Services} />
-          <Route path="/menu" component={Menu} />
           <Route path="/" component={Home} />
         </Switch>
       </Layout>
