@@ -19,6 +19,9 @@ const theme = createMuiTheme({
     MuiButton: {
       disableRipple: true,
     },
+    MuiInputLabel: {
+      shrink: true,
+    },
   },
   // Shape
   shape: {
@@ -43,6 +46,27 @@ const theme = createMuiTheme({
         margin: 2,
         padding: 16,
         fontSize: 12,
+      },
+    },
+    MuiFormLabel: {
+      root: {
+        color: '#eee',
+      },
+    },
+    MuiInput: {
+      underline: {
+        '&:before': {
+          borderBottom: '1px solid rgba(255,255,255,.3)',
+        },
+        '&:hover:not(.Mui-disabled):before': {
+          borderBottom: '1px solid #c49b63',
+        },
+      },
+    },
+    MuiInputBase: {
+      root: {
+        color: '#fff',
+        fontSize: '0.8rem',
       },
     },
   },
