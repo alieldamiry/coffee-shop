@@ -1,5 +1,5 @@
 import Menu from '../components/Sections/Menu/Menu';
-import Hero from '../components/Hero';
+import Hero from '../components/Sections/Hero/Hero';
 import IntroInfo from '../components/IntroInfo/IntroInfo';
 import Services from '../components/Sections/Services/Services';
 import Story from '../components/Sections/Story';
