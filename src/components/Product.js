@@ -1,7 +1,12 @@
-import { Button, Grid, makeStyles, Typography } from '@material-ui/core';
+import { Button, makeStyles, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
+  product: {
+    minHeight: '100%',
+    display: 'grid',
+    gridTemplateRows: 'auto 1fr auto',
+  },
   productImg: {
     width: '100%',
     '& img': {
@@ -27,23 +32,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// This component must be placed inside a grid
 const Product = ({ name, image, description, price }) => {
   const classes = useStyles();
   return (
-    <Grid item xs={12} sm={6} lg={3}>
-      <div className={classes.product}>
-        <div className={classes.productImg}>
-          <img src={image} alt={name} />
-        </div>
+    <div className={classes.product}>
+      <div className={classes.productImg}>
+        <img src={image} alt={name} />
+      </div>
+      <div>
         <Typography className={classes.productTitle} component="h6" variant="h6">{name}</Typography>
         <Typography className={classes.productDescription}>{description}</Typography>
+      </div>
+      <div>
         <Typography>
           $
           {price}
         </Typography>
         <Button className={classes.addBtn}>Add to Cart</Button>
       </div>
-    </Grid>
+    </div>
   );
 };
 

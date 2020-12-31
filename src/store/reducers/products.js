@@ -13,10 +13,14 @@ const fetchProductsStart = (state) => {
   };
 };
 const fetchProductsSuccess = (state, action) => {
+  // sort products alphabetically
+  const sortedProducts = [...action.products];
+  sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+
   return {
     ...state,
     loading: false,
-    products: action.products,
+    products: sortedProducts,
   };
 };
 const fetchProductsFalied = (state, action) => {
