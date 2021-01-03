@@ -1,5 +1,6 @@
 import { Button, makeStyles, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   product: {
@@ -9,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
   productImg: {
     width: '100%',
+    cursor: 'pointer',
     '& img': {
       width: '100%',
     },
@@ -32,12 +34,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// This component must be placed inside a grid
-const Product = ({ name, image, description, price }) => {
+const Product = ({ id, name, image, description, price }) => {
   const classes = useStyles();
+  const history = useHistory();
+  console.log(id);
+
+  const hendleClick = () => {
+    history.push(`/shop/${id}`);
+  };
   return (
     <div className={classes.product}>
-      <div className={classes.productImg}>
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
+      <div className={classes.productImg} role="link" tabIndex="0" onClick={hendleClick}>
         <img src={image} alt={name} />
       </div>
       <div>

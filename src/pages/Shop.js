@@ -18,6 +18,7 @@ const Shop = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(actions.fetchProducts());
+    console.log(products);
   }, []);
   return (
     <section className={classes.shop}>
@@ -25,6 +26,7 @@ const Shop = () => {
         {products ? products.map((p) => (
           <Grid item xs={12} sm={6} md={3} key={p.name}>
             <Product
+              id={p.id}
               name={p.name}
               image={p.image}
               description={p.description}
