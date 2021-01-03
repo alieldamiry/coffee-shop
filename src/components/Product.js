@@ -1,6 +1,6 @@
 import { Button, makeStyles, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   product: {
@@ -35,19 +35,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Product = ({ id, name, image, description, price }) => {
-  const classes = useStyles();
-  const history = useHistory();
   console.log(id);
-
-  const hendleClick = () => {
-    history.push(`/shop/${id}`);
-  };
+  const classes = useStyles();
   return (
     <div className={classes.product}>
-      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
-      <div className={classes.productImg} role="link" tabIndex="0" onClick={hendleClick}>
+      <Link className={classes.productImg} to={`/shop/${id - 1}`}>
         <img src={image} alt={name} />
-      </div>
+      </Link>
       <div>
         <Typography className={classes.productTitle} component="h6" variant="h6">{name}</Typography>
         <Typography className={classes.productDescription}>{description}</Typography>
