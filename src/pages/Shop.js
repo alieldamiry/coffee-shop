@@ -18,7 +18,6 @@ const Shop = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(actions.fetchProducts());
-    console.log(products);
   }, []);
   return (
     <section className={classes.shop}>

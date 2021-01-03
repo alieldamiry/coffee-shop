@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Product = ({ id, name, image, description, price }) => {
-  console.log(id);
   const classes = useStyles();
   return (
     <div className={classes.product}>
