@@ -10,10 +10,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import theme from './theme';
 import productsReducer from './store/reducers/products';
+import cartReducer from './store/reducers/cart';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const rootReducer = combineReducers({
   products: productsReducer,
+  cart: cartReducer,
 });
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 ReactDOM.render(

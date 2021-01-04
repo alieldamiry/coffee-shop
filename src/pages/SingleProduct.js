@@ -2,8 +2,10 @@ import { Button, Grid, makeStyles, Typography } from '@material-ui/core';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import Hero from '../components/Sections/Hero/Hero';
 import Inner from '../components/Sections/Hero/Inner';
+import * as actions from '../store/actions/cart';
 
 const useStyles = makeStyles((theme) => ({
   SingleProduct: {
@@ -34,6 +36,7 @@ const SingleProduct = () => {
   const classes = useStyles();
   const { id } = useParams();
   const [product, setProduct] = useState();
+  const dispatch = useDispatch();
   useEffect(() => {
     axios.get(`https://coffe-shop-6d2ae-default-rtdb.firebaseio.com/products/${id}.json`)
       .then((res) => {
@@ -43,6 +46,17 @@ const SingleProduct = () => {
         console.log(err);
       });
   }, []);
+  const addToCart = () => {
+    dispatch(actions.addToCart(
+      {
+        id: product.id,
+        image: product.image,
+        name: product.name,
+        price: product.price,
+        quantity: 1,
+      },
+    ));
+  };
   return (
     <>
       <Hero>
@@ -75,7 +89,7 @@ const SingleProduct = () => {
                     ambushed her, made her drunk with Longe and Parole and dragged her into their
                     agency, where they abused her for their.
                   </Typography>
-                  <Button variant="outlined" color="primary">Add To Cart</Button>
+                  <Button variant="outlined" color="primary" onClick={addToCart}>Add To Cart</Button>
                 </div>
               </div>
             </Grid>
