@@ -2,7 +2,7 @@ import { Button, Grid, makeStyles, Typography } from '@material-ui/core';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Hero from '../components/Sections/Hero/Hero';
 import Inner from '../components/Sections/Hero/Inner';
 import * as actions from '../store/actions/cart';
@@ -37,6 +37,8 @@ const SingleProduct = () => {
   const { id } = useParams();
   const [product, setProduct] = useState();
   const dispatch = useDispatch();
+  const cartProducts = useSelector((state) => state.cart.cartProducts);
+
   useEffect(() => {
     axios.get(`https://coffe-shop-6d2ae-default-rtdb.firebaseio.com/products/${id}.json`)
       .then((res) => {
@@ -46,16 +48,23 @@ const SingleProduct = () => {
         console.log(err);
       });
   }, []);
+
   const addToCart = () => {
-    dispatch(actions.addToCart(
-      {
-        id: product.id,
-        image: product.image,
-        name: product.name,
-        price: product.price,
-        quantity: 1,
-      },
-    ));
+    if (!cartProducts.some((p) => p.id === product.id)) {
+      dispatch(actions.addToCart(
+        {
+          id: product.id,
+          image: product.image,
+          name: product.name,
+          price: product.price,
+          quantity: 1,
+        },
+      ));
+      dispatch(actions.calculatePrice());
+    } else {
+      dispatch(actions.incrementQuantity(product.id));
+      dispatch(actions.calculatePrice());
+    }
   };
   return (
     <>

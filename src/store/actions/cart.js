@@ -6,3 +6,16 @@ export const addToCart = (cartProduct) => {
     cartProduct,
   };
 };
+
+export const calculatePrice = () => {
+  return {
+    type: actionTypes.CALCULATE_PRICE,
+  };
+};
+
+export const incrementQuantity = (productId) => {
+  return {
+    type: actionTypes.INCREMENT_QAUNTITY,
+    productId,
+  };
+};
