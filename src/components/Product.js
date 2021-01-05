@@ -1,6 +1,8 @@
 import { Button, makeStyles, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import * as actions from '../store/actions/cart';
 
 const useStyles = makeStyles((theme) => ({
   product: {
@@ -36,6 +38,25 @@ const useStyles = makeStyles((theme) => ({
 
 const Product = ({ id, name, image, description, price }) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const cartProducts = useSelector((state) => state.cart.cartProducts);
+  const addToCart = () => {
+    if (!cartProducts.some((p) => p.id === id)) {
+      dispatch(actions.addToCart(
+        {
+          id,
+          image,
+          name,
+          price,
+          quantity: 1,
+        },
+      ));
+      dispatch(actions.calculatePrice());
+    } else {
+      dispatch(actions.incrementQuantity(id));
+      dispatch(actions.calculatePrice());
+    }
+  };
   return (
     <div className={classes.product}>
       <Link className={classes.productImg} to={`/shop/${id - 1}`}>
@@ -50,7 +71,7 @@ const Product = ({ id, name, image, description, price }) => {
           $
           {price}
         </Typography>
-        <Button className={classes.addBtn}>Add to Cart</Button>
+        <Button className={classes.addBtn} onClick={addToCart}>Add to Cart</Button>
       </div>
     </div>
   );
