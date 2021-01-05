@@ -15,9 +15,9 @@ const addToCart = (state, action) => {
 
 const calculatePrice = (state /* ,action */) => {
   const totalPrice = state.cartProducts.reduce((prev, cur) => {
-    return (prev + cur.price * cur.quantity).toFixed(2);
+    return (prev + cur.price * cur.quantity);
   }, 0);
-  return { ...state, totalPrice };
+  return { ...state, totalPrice: totalPrice.toFixed(2) };
 };
 
 const incrementQuantity = (state, action) => {
