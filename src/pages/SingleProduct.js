@@ -49,7 +49,7 @@ const SingleProduct = () => {
       });
   }, []);
 
-  const addToCart = () => {
+  const onAddToCart = () => {
     if (!cartProducts.some((p) => p.id === product.id)) {
       dispatch(actions.addToCart(
         {
@@ -60,11 +60,10 @@ const SingleProduct = () => {
           quantity: 1,
         },
       ));
-      dispatch(actions.calculatePrice());
     } else {
       dispatch(actions.incrementQuantity(product.id));
-      dispatch(actions.calculatePrice());
     }
+    dispatch(actions.calculatePrice());
   };
   return (
     <>
@@ -98,7 +97,7 @@ const SingleProduct = () => {
                     ambushed her, made her drunk with Longe and Parole and dragged her into their
                     agency, where they abused her for their.
                   </Typography>
-                  <Button variant="outlined" color="primary" onClick={addToCart}>Add To Cart</Button>
+                  <Button variant="outlined" color="primary" onClick={onAddToCart}>Add To Cart</Button>
                 </div>
               </div>
             </Grid>

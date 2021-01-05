@@ -40,7 +40,7 @@ const Product = ({ id, name, image, description, price }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const cartProducts = useSelector((state) => state.cart.cartProducts);
-  const addToCart = () => {
+  const onAddToCart = () => {
     if (!cartProducts.some((p) => p.id === id)) {
       dispatch(actions.addToCart(
         {
@@ -51,11 +51,10 @@ const Product = ({ id, name, image, description, price }) => {
           quantity: 1,
         },
       ));
-      dispatch(actions.calculatePrice());
     } else {
       dispatch(actions.incrementQuantity(id));
-      dispatch(actions.calculatePrice());
     }
+    dispatch(actions.calculatePrice());
   };
   return (
     <div className={classes.product}>
@@ -71,7 +70,7 @@ const Product = ({ id, name, image, description, price }) => {
           $
           {price}
         </Typography>
-        <Button className={classes.addBtn} onClick={addToCart}>Add to Cart</Button>
+        <Button className={classes.addBtn} onClick={onAddToCart}>Add to Cart</Button>
       </div>
     </div>
   );
