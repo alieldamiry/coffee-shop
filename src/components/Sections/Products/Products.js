@@ -1,9 +1,8 @@
 import { Grid, makeStyles, Typography } from '@material-ui/core';
-import productImg1 from '../../../assets/images/drinks/1.jpg';
-import productImg2 from '../../../assets/images/drinks/2.jpg';
-import productImg3 from '../../../assets/images/drinks/3.jpg';
-import productImg4 from '../../../assets/images/drinks/4.jpg';
-import Product from './Product';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Product from '../../Product';
+import * as actions from '../../../store/actions/products';
 
 const useStyles = makeStyles((theme) => ({
   Products: {
@@ -23,11 +22,17 @@ const useStyles = makeStyles((theme) => ({
   description: {
     opacity: 0.7,
   },
-
 }));
 
 const Products = () => {
   const classes = useStyles();
+  const products = useSelector((state) => state.products.products);
+  const filteredProducts = products && products.filter((p) => p.category === 'coffee');
+  //                               state.products.products.filter((p) => p.category === 'coffee'));
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(actions.fetchProducts());
+  }, []);
   return (
     <section className={classes.Products}>
       <div className={classes.title}>
@@ -39,30 +44,16 @@ const Products = () => {
         </Typography>
       </div>
       <Grid container spacing={5}>
-        <Product
-          name="COFFEE CAPUCCINO"
-          image={productImg1}
-          description="A small river named Duden flows by their place and supplies"
-          price={12}
-        />
-        <Product
-          name="COFFEE CAPUCCINO"
-          image={productImg2}
-          description="A small river named Duden flows by their place and supplies"
-          price={10}
-        />
-        <Product
-          name="COFFEE CAPUCCINO"
-          image={productImg3}
-          description="A small river named Duden flows by their place and supplies"
-          price={10}
-        />
-        <Product
-          name="COFFEE CAPUCCINO"
-          image={productImg4}
-          description="A small river named Duden flows by their place and supplies"
-          price={10}
-        />
+        {products ? filteredProducts.map((p) => (
+          <Grid item xs={12} sm={6} md={3} key={p.name}>
+            <Product
+              name={p.name}
+              image={p.image}
+              description={p.description}
+              price={p.price}
+            />
+          </Grid>
+        )) : null}
       </Grid>
     </section>
   );

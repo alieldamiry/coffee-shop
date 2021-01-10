@@ -17,7 +17,7 @@ const Inner = ({ currentPage }) => {
   const classes = useStyles();
   return (
     <div className={classes.inner}>
-      <Typography gutterBottom variant="h4" component="h3">OUR MENU</Typography>
+      <Typography gutterBottom variant="h4" component="h3">{currentPage}</Typography>
       <Breadcrumbs className={classes.breadcrumbs} color="inherit" aria-label="breadcrumb">
         <Link color="inherit" href="/">
           Home

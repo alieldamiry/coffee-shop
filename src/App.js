@@ -7,6 +7,7 @@ import Services from './pages/Services';
 import Cart from './pages/Cart';
 import Contact from './pages/Contact';
 import Shop from './pages/Shop';
+import SingleProduct from './pages/SingleProduct';
 
 const useStyles = makeStyles(() => ({
   App: {
@@ -23,10 +24,11 @@ const App = () => {
         <Switch>
           <Route path="/cart" component={Cart} />
           <Route path="/contact" component={Contact} />
+          <Route path="/shop/:id" component={SingleProduct} />
           <Route path="/shop" component={Shop} />
           <Route path="/about" component={About} />
           <Route path="/services" component={Services} />
-          <Route path="/" component={Home} />
+          <Route exact path="/" component={Home} />
         </Switch>
       </Layout>
     </div>
