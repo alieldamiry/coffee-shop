@@ -6,6 +6,8 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 import red from '@material-ui/core/colors/red';
+import { useDispatch } from 'react-redux';
+import * as actions from '../store/actions/cart';
 
 const useStyles = makeStyles((theme) => ({
   productImg: {
@@ -46,12 +48,26 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
 }));
-const CartProduct = ({ image, name, price, quantity }) => {
+const CartProduct = ({ id, image, name, price, quantity }) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  const onIncrementQuantity = () => {
+    dispatch(actions.incrementQuantity(id));
+  };
+
+  const onDecrementQuantity = () => {
+    if (quantity > 1) dispatch(actions.decrementQuantity(id));
+  };
+
+  const onRemoveFromCart = () => {
+    dispatch(actions.removeFromCart(id));
+  };
+
   return (
     <TableRow key={name}>
       <TableCell component="th" scope="row">
-        <IconButton>
+        <IconButton onClick={onRemoveFromCart}>
           <DeleteIcon title="tss" className={classes.deleteIcon} />
         </IconButton>
       </TableCell>
@@ -72,11 +88,11 @@ const CartProduct = ({ image, name, price, quantity }) => {
       </TableCell>
       <TableCell align="center">
         <div className={classes.counterGroup}>
-          <IconButton className={classes.iconButton}>
+          <IconButton onClick={onDecrementQuantity} className={classes.iconButton}>
             <RemoveRoundedIcon color="primary" className={classes.icon} />
           </IconButton>
           <div className={classes.quantity}>{quantity}</div>
-          <IconButton className={classes.iconButton}>
+          <IconButton onClick={onIncrementQuantity} className={classes.iconButton}>
             <AddRoundedIcon color="primary" className={classes.icon} />
           </IconButton>
         </div>

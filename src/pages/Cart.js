@@ -65,53 +65,57 @@ const Cart = () => {
         <Inner currentPage="Cart" />
       </Hero>
       <section className={classes.cart}>
-        <Container>
-          <TableContainer className={classes.tableContainer}>
-            <Table className={classes.table} aria-label="simple table">
-              <TableHead className={classes.tablHead}>
-                <TableRow>
-                  <TableCell>&nbsp;</TableCell>
-                  <TableCell align="center">&nbsp;</TableCell>
-                  <TableCell align="center">Product&nbsp;</TableCell>
-                  <TableCell align="center">Price&nbsp;</TableCell>
-                  <TableCell align="center">Quantity&nbsp;</TableCell>
-                  <TableCell align="center">Total&nbsp;</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {cartProducts && cartProducts.map((p) => (
-                  <CartProduct
-                    key={p.id}
-                    image={p.image}
-                    name={p.name}
-                    price={p.price}
-                    quantity={p.quantity}
-                  />
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-          <div className={classes.summaryRow}>
-            <div className={classes.boxContainer}>
-              <div className={classes.totalsBox}>
-                <h2>CART TOTALS</h2>
-                <div className={classes.totalRow}>
-                  <div>Subtotal: </div>
-                  <div>$20.60</div>
+        {cartProducts.length > 0 ? (
+          <Container>
+            <TableContainer className={classes.tableContainer}>
+              <Table className={classes.table} aria-label="simple table">
+                <TableHead className={classes.tablHead}>
+                  <TableRow>
+                    <TableCell>&nbsp;</TableCell>
+                    <TableCell align="center">&nbsp;</TableCell>
+                    <TableCell align="center">Product&nbsp;</TableCell>
+                    <TableCell align="center">Price&nbsp;</TableCell>
+                    <TableCell align="center">Quantity&nbsp;</TableCell>
+                    <TableCell align="center">Total&nbsp;</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {cartProducts.map((p) => (
+                    <CartProduct
+                      key={p.id}
+                      id={p.id}
+                      image={p.image}
+                      name={p.name}
+                      price={p.price}
+                      quantity={p.quantity}
+                    />
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+            <div className={classes.summaryRow}>
+              <div className={classes.boxContainer}>
+                <div className={classes.totalsBox}>
+                  <h2>CART TOTALS</h2>
+                  <div className={classes.totalRow}>
+                    <div>Subtotal: </div>
+                    <div>$20.60</div>
+                  </div>
+                  <div className={classes.totalRow}>
+                    <div>Delivery: </div>
+                    <div>$20.60</div>
+                  </div>
+                  <div className={[classes.totalRow, classes.borderTop].join(' ')}>
+                    <div>Total: </div>
+                    <div className={classes.totalPrice}>$20.60</div>
+                  </div>
                 </div>
-                <div className={classes.totalRow}>
-                  <div>Delivery: </div>
-                  <div>$20.60</div>
-                </div>
-                <div className={[classes.totalRow, classes.borderTop].join(' ')}>
-                  <div>Total: </div>
-                  <div className={classes.totalPrice}>$20.60</div>
-                </div>
+                <Button color="primary" variant="contained" fullWidth>Checkout</Button>
               </div>
-              <Button color="primary" variant="contained" fullWidth>Checkout</Button>
             </div>
-          </div>
-        </Container>
+          </Container>
+        ) : <h2 style={{ textAlign: 'center' }}>Your Cart is Empty</h2>}
+
       </section>
     </>
   );

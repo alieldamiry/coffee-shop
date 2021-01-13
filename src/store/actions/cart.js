@@ -7,6 +7,13 @@ export const addToCart = (cartProduct) => {
   };
 };
 
+export const removeFromCart = (id) => {
+  return {
+    type: actionTypes.REMOVE_FORM_CART,
+    id,
+  };
+};
+
 export const calculatePrice = () => {
   return {
     type: actionTypes.CALCULATE_PRICE,
@@ -16,6 +23,13 @@ export const calculatePrice = () => {
 export const incrementQuantity = (productId) => {
   return {
     type: actionTypes.INCREMENT_QAUNTITY,
+    productId,
+  };
+};
+
+export const decrementQuantity = (productId) => {
+  return {
+    type: actionTypes.DECREMENT_QAUNTITY,
     productId,
   };
 };
