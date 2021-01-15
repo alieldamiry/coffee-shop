@@ -54,14 +54,19 @@ const CartProduct = ({ id, image, name, price, quantity }) => {
 
   const onIncrementQuantity = () => {
     dispatch(actions.incrementQuantity(id));
+    dispatch(actions.calculatePrice());
   };
 
   const onDecrementQuantity = () => {
-    if (quantity > 1) dispatch(actions.decrementQuantity(id));
+    if (quantity > 1) {
+      dispatch(actions.decrementQuantity(id));
+      dispatch(actions.calculatePrice());
+    }
   };
 
   const onRemoveFromCart = () => {
     dispatch(actions.removeFromCart(id));
+    dispatch(actions.calculatePrice());
   };
 
   return (

@@ -58,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
 const Cart = () => {
   const classes = useStyles();
   const cartProducts = useSelector((state) => state.cart.cartProducts);
+  const totalPrice = useSelector((state) => state.cart.totalPrice);
 
   return (
     <>
@@ -99,15 +100,24 @@ const Cart = () => {
                   <h2>CART TOTALS</h2>
                   <div className={classes.totalRow}>
                     <div>Subtotal: </div>
-                    <div>$20.60</div>
+                    <div>
+                      $
+                      {totalPrice}
+                    </div>
                   </div>
                   <div className={classes.totalRow}>
-                    <div>Delivery: </div>
-                    <div>$20.60</div>
+                    <div>Tax(10%): </div>
+                    <div>
+                      $
+                      {(0.1 * totalPrice).toFixed(2)}
+                    </div>
                   </div>
                   <div className={[classes.totalRow, classes.borderTop].join(' ')}>
                     <div>Total: </div>
-                    <div className={classes.totalPrice}>$20.60</div>
+                    <div className={classes.totalPrice}>
+                      $
+                      {(+totalPrice + 0.1 * +totalPrice).toFixed(2)}
+                    </div>
                   </div>
                 </div>
                 <Button color="primary" variant="contained" fullWidth>Checkout</Button>
