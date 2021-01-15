@@ -69,6 +69,14 @@ const theme = createMuiTheme({
         fontSize: '0.8rem',
       },
     },
+    MuiTableCell: {
+      body: {
+        color: '#fff',
+      },
+      head: {
+        color: '#fff',
+      },
+    },
   },
   // shadows: ["none"],
 });

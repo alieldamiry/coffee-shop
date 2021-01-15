@@ -1,7 +1,7 @@
 import { Badge, Link, makeStyles } from '@material-ui/core';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { useSelector } from 'react-redux';
-import { Link as RouterLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   navLinks: {
@@ -23,9 +23,9 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       color: theme.palette.primary.main,
     },
-    [theme.breakpoints.up('sm')]: {
-      color: '#ffffff',
-    },
+  },
+  activeNavlink: {
+    color: `${theme.palette.primary.main}`,
   },
 }));
 const NavLinks = () => {
@@ -38,12 +38,12 @@ const NavLinks = () => {
   return (
 
     <nav className={classes.navLinks}>
-      <Link component={RouterLink} to="/" className={classes.navLink}>HOME</Link>
-      <Link component={RouterLink} to="/services" className={classes.navLink}>SERVICES</Link>
-      <Link component={RouterLink} to="/about" className={classes.navLink}>ABOUT</Link>
-      <Link component={RouterLink} to="/shop" className={classes.navLink}>SHOP</Link>
-      <Link component={RouterLink} to="/contact" className={classes.navLink}>CONTACT</Link>
-      <Link component={RouterLink} to="/cart" className={classes.navLink}>
+      <Link activeClassName={classes.activeNavlink} className={classes.navLink} exact component={NavLink} to="/">HOME</Link>
+      <Link activeClassName={classes.activeNavlink} className={classes.navLink} component={NavLink} to="/services">SERVICES</Link>
+      <Link activeClassName={classes.activeNavlink} className={classes.navLink} component={NavLink} to="/about">ABOUT</Link>
+      <Link activeClassName={classes.activeNavlink} className={classes.navLink} component={NavLink} to="/shop">SHOP</Link>
+      <Link activeClassName={classes.activeNavlink} className={classes.navLink} component={NavLink} to="/contact">CONTACT</Link>
+      <Link activeClassName={classes.activeNavlink} className={classes.navLink} component={NavLink} to="/cart">
         <Badge badgeContent={countedProducts} color="secondary">
           <ShoppingCartIcon />
         </Badge>
