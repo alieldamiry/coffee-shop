@@ -8,6 +8,7 @@ import Cart from './pages/Cart';
 import Contact from './pages/Contact';
 import Shop from './pages/Shop';
 import SingleProduct from './pages/SingleProduct';
+import Checkout from './pages/Checkout';
 
 const useStyles = makeStyles(() => ({
   App: {
@@ -23,6 +24,7 @@ const App = () => {
       <Layout>
         <Switch>
           <Route path="/cart" component={Cart} />
+          <Route path="/checkout" component={Checkout} />
           <Route path="/contact" component={Contact} />
           <Route path="/shop/:id" component={SingleProduct} />
           <Route path="/shop" component={Shop} />
