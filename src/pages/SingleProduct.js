@@ -44,8 +44,8 @@ const SingleProduct = () => {
       .then((res) => {
         setProduct(res.data);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
+        // console.log(err);
       });
   }, []);
 
