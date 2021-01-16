@@ -20,7 +20,7 @@ const theme = createMuiTheme({
       disableRipple: true,
     },
     MuiInputLabel: {
-      shrink: true,
+      // shrink: ,
     },
   },
   // Shape
@@ -66,7 +66,6 @@ const theme = createMuiTheme({
     MuiInputBase: {
       root: {
         color: '#fff',
-        fontSize: '0.8rem',
       },
     },
     MuiTableCell: {
@@ -75,6 +74,21 @@ const theme = createMuiTheme({
       },
       head: {
         color: '#fff',
+      },
+    },
+    MuiOutlinedInput: {
+      notchedOutline: {
+        borderColor: '#272727',
+      },
+      root: {
+        '&:hover $notchedOutline': {
+          borderColor: '#4b4b4b',
+        },
+      },
+    },
+    MuiSelect: {
+      icon: {
+        fill: '#272727',
       },
     },
   },

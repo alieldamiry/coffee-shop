@@ -1,4 +1,4 @@
-import { Button, Container, makeStyles } from '@material-ui/core';
+import { Button, Container, Link, makeStyles } from '@material-ui/core';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -6,9 +6,11 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { useSelector } from 'react-redux';
+import { Link as RouterLink } from 'react-router-dom';
 import Inner from '../components/Sections/Hero/Inner';
 import Hero from '../components/Sections/Hero/Hero';
 import CartProduct from '../components/CartProduct';
+import PriceSummary from '../components/PriceSummary';
 
 const useStyles = makeStyles((theme) => ({
   cart: {
@@ -23,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
   },
   tableContainer: {
     maxWidth: 1200,
-    marginBottom: '2rem',
   },
   tablHead: {
     backgroundColor: theme.palette.primary.main,
@@ -31,34 +32,17 @@ const useStyles = makeStyles((theme) => ({
   summaryRow: {
     display: 'flex',
     justifyContent: 'flex-end',
+    color: '#fff',
   },
   boxContainer: {
     minWidth: 300,
-  },
-  totalsBox: {
-    border: '1px solid rgba(255, 255, 255, 0.1)',
-    padding: '1rem',
-  },
-  totalPrice: {
-    color: theme.palette.primary.light,
-  },
-  totalRow: {
-    display: 'flex',
-    padding: '1rem 0',
-    opacity: 0.7,
-    '& div': {
-      flex: 1,
-    },
-  },
-  borderTop: {
-    borderTop: '1px solid #fff',
+    marginTop: 10,
   },
 }));
 
 const Cart = () => {
   const classes = useStyles();
   const cartProducts = useSelector((state) => state.cart.cartProducts);
-  const totalPrice = useSelector((state) => state.cart.totalPrice);
 
   return (
     <>
@@ -96,36 +80,16 @@ const Cart = () => {
             </TableContainer>
             <div className={classes.summaryRow}>
               <div className={classes.boxContainer}>
-                <div className={classes.totalsBox}>
-                  <h2>CART TOTALS</h2>
-                  <div className={classes.totalRow}>
-                    <div>Subtotal: </div>
-                    <div>
-                      $
-                      {totalPrice}
-                    </div>
-                  </div>
-                  <div className={classes.totalRow}>
-                    <div>Tax(10%): </div>
-                    <div>
-                      $
-                      {(0.1 * totalPrice).toFixed(2)}
-                    </div>
-                  </div>
-                  <div className={[classes.totalRow, classes.borderTop].join(' ')}>
-                    <div>Total: </div>
-                    <div className={classes.totalPrice}>
-                      $
-                      {(+totalPrice + 0.1 * +totalPrice).toFixed(2)}
-                    </div>
-                  </div>
-                </div>
-                <Button color="primary" variant="contained" fullWidth>Checkout</Button>
+                <PriceSummary />
+                <Link component={RouterLink} to="/checkout">
+                  <Button color="primary" variant="contained" fullWidth>
+                    Proceed to Checkout
+                  </Button>
+                </Link>
               </div>
             </div>
           </Container>
         ) : <h2 style={{ textAlign: 'center' }}>Your Cart is Empty</h2>}
-
       </section>
     </>
   );
