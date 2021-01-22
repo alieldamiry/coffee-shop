@@ -1,6 +1,4 @@
-import { Badge, Link, makeStyles } from '@material-ui/core';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import { useSelector } from 'react-redux';
+import { Link, makeStyles } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
@@ -30,10 +28,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 const NavLinks = () => {
   const classes = useStyles();
-  const products = useSelector((state) => state.cart.cartProducts);
-  const countedProducts = products.reduce((prev, cur) => {
-    return (prev + cur.quantity);
-  }, 0);
 
   return (
 
@@ -43,11 +37,6 @@ const NavLinks = () => {
       <Link activeClassName={classes.activeNavlink} className={classes.navLink} component={NavLink} to="/about">ABOUT</Link>
       <Link activeClassName={classes.activeNavlink} className={classes.navLink} component={NavLink} to="/shop">SHOP</Link>
       <Link activeClassName={classes.activeNavlink} className={classes.navLink} component={NavLink} to="/contact">CONTACT</Link>
-      <Link activeClassName={classes.activeNavlink} className={classes.navLink} component={NavLink} to="/cart">
-        <Badge badgeContent={countedProducts} color="secondary">
-          <ShoppingCartIcon />
-        </Badge>
-      </Link>
     </nav>
   );
 };
