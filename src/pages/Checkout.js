@@ -1,11 +1,6 @@
-/* eslint-disable no-unused-vars */
 import { Box, Button, Grid, makeStyles, Paper, TextField, Typography } from '@material-ui/core';
 import Container from '@material-ui/core/Container';
-import { useState, useEffect } from 'react';
-import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 import { useForm, Controller } from 'react-hook-form';
 import Hero from '../components/Sections/Hero/Hero';
 import Inner from '../components/Sections/Hero/Inner';
@@ -31,12 +26,9 @@ const useStyles = makeStyles(() => ({
 const Checkout = () => {
   const classes = useStyles();
   const { register, handleSubmit, errors, control } = useForm();
-  useEffect(() => {
-    // console.log('errors', errors);
-  }, [errors]);
 
   const onSubmit = (data) => {
-    // console.log(data);
+    console.log(data);
   };
   return (
     <>
