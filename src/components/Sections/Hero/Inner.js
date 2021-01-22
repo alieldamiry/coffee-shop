@@ -7,6 +7,7 @@ const useStyles = makeStyles(() => ({
     color: ' #ffffff',
     maxWidth: ' 40rem',
     padding: '1rem',
+    textTransform: 'uppercase',
   },
   breadcrumbs: {
     display: 'flex',
@@ -20,7 +21,7 @@ const Inner = ({ currentPage }) => {
 
   return (
     <div className={classes.inner}>
-      <Typography gutterBottom variant="h4" component="h3">{currentPage}</Typography>
+      <Typography gutterBottom variant="h3" component="h3">{currentPage}</Typography>
       <Breadcrumbs className={classes.breadcrumbs} color="inherit" aria-label="breadcrumb">
         <Link color="inherit" to="/" component={NavLink}>
           Home
