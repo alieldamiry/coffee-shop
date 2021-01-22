@@ -31,7 +31,6 @@ const calculatePrice = (state /* ,action */) => {
 
 const incrementQuantity = (state, action) => {
   const products = [...state.cartProducts];
-  console.log(products.filter((p) => p.id === action.productId));
   products.filter((p) => p.id === action.productId)[0].quantity += 1;
 
   return {
