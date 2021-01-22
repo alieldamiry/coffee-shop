@@ -16,7 +16,12 @@ const useStyles = makeStyles(() => ({
 const SideDrawer = ({ showSideDrawer, setShowSideDrawer }) => {
   const classes = useStyles();
   return (
-    <Drawer anchor="right" open={showSideDrawer} onClose={() => setShowSideDrawer(false)}>
+    <Drawer
+      anchor="right"
+      open={showSideDrawer}
+      onClick={() => setShowSideDrawer(false)}
+      onClose={() => setShowSideDrawer(false)}
+    >
       <div style={{ width: '280px' }}>
         <div className={classes.drawerHeader}>
           <Logo />
