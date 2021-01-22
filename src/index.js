@@ -11,6 +11,7 @@ import reportWebVitals from './reportWebVitals';
 import theme from './theme';
 import productsReducer from './store/reducers/products';
 import cartReducer from './store/reducers/cart';
+import ScrollToTop from './ScrollToTop';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const rootReducer = combineReducers({
@@ -23,6 +24,7 @@ ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
         <ThemeProvider theme={theme}>
+          <ScrollToTop />
           <App />
         </ThemeProvider>
       </BrowserRouter>
