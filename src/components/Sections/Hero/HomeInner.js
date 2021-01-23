@@ -1,4 +1,5 @@
-import { Button, makeStyles, Typography } from '@material-ui/core';
+import { Button, makeStyles, Typography, Link } from '@material-ui/core';
+import { Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
   inner: {
@@ -18,8 +19,9 @@ const HomeInner = () => {
         with the necessary regelialia.
       </p>
       <div>
-        <Button variant="contained" color="primary">Shop Now</Button>
-        <Button variant="outlined" color="primary">View Menu</Button>
+        <Link component={RouterLink} to="/shop">
+          <Button variant="outlined" color="primary">Shop Now</Button>
+        </Link>
       </div>
     </div>
   );
