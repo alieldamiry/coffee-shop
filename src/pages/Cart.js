@@ -36,6 +36,11 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 300,
     marginTop: 10,
   },
+  emptyCart: {
+    height: '80vh',
+    display: 'grid',
+    placeItems: 'center',
+  },
 }));
 
 const Cart = () => {
@@ -84,7 +89,20 @@ const Cart = () => {
               </div>
             </div>
           </Container>
-        ) : <h2 style={{ textAlign: 'center' }}>Your Cart is Empty</h2>}
+        )
+          : (
+            <div className={classes.emptyCart}>
+              <div>
+                <h2>Your Cart is Empty!</h2>
+                <Link component={RouterLink} to="/shop">
+                  <Button color="primary" variant="contained" fullWidth>
+                    Back to Shopping
+                  </Button>
+                </Link>
+              </div>
+
+            </div>
+          )}
       </section>
     </>
   );
