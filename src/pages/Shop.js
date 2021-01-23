@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import * as actions from '../store/actions/products';
 import Product from '../components/Product';
 import Hero from '../components/Sections/Hero/Hero';
@@ -93,7 +94,12 @@ const Shop = () => {
                 price={p.price}
               />
             </Grid>
-          )) : null}
+          ))
+            : (
+              <div style={{ width: '100%', display: 'grid', placeItems: 'center' }}>
+                <CircularProgress />
+              </div>
+            )}
         </Grid>
       </section>
     </>
