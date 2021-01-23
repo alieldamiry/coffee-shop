@@ -4,7 +4,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { useState } from 'react';
-import Container from '@material-ui/core/Container';
 import { NavLink } from 'react-router-dom';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { useSelector } from 'react-redux';
@@ -58,32 +57,30 @@ const NavBar = () => {
     return (prev + cur.quantity);
   }, 0);
   return (
-    <Container fixed>
-      <AppBar className={classes.appBar} position="fixed">
-        <SideDrawer showSideDrawer={showSideDrawer} setShowSideDrawer={setShowSideDrawer} />
-        <Toolbar>
-          <div className={classes.title}>
-            <Logo />
-          </div>
-          <div className={classes.desktopNavLinks}>
-            <NavLinks />
-          </div>
-          <Link
-            activeClassName={classes.activeNavlink}
-            className={classes.navLink}
-            component={NavLink}
-            to="/cart"
-          >
-            <Badge badgeContent={countedProducts} color="secondary">
-              <ShoppingCartIcon />
-            </Badge>
-          </Link>
-          <IconButton className={classes.menuButton} onClick={toggleSideDrawer} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-    </Container>
+    <AppBar className={classes.appBar} position="sticky">
+      <SideDrawer showSideDrawer={showSideDrawer} setShowSideDrawer={setShowSideDrawer} />
+      <Toolbar>
+        <div className={classes.title}>
+          <Logo />
+        </div>
+        <div className={classes.desktopNavLinks}>
+          <NavLinks />
+        </div>
+        <Link
+          activeClassName={classes.activeNavlink}
+          className={classes.navLink}
+          component={NavLink}
+          to="/cart"
+        >
+          <Badge badgeContent={countedProducts} color="secondary">
+            <ShoppingCartIcon />
+          </Badge>
+        </Link>
+        <IconButton className={classes.menuButton} onClick={toggleSideDrawer} color="inherit" aria-label="menu">
+          <MenuIcon />
+        </IconButton>
+      </Toolbar>
+    </AppBar>
   );
 };
 export default NavBar;

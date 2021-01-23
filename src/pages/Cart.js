@@ -7,8 +7,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { useSelector } from 'react-redux';
 import { Link as RouterLink } from 'react-router-dom';
-import Inner from '../components/Sections/Hero/Inner';
-import Hero from '../components/Sections/Hero/Hero';
 import CartProduct from '../components/CartProduct';
 import PriceSummary from '../components/PriceSummary';
 
@@ -46,9 +44,6 @@ const Cart = () => {
 
   return (
     <>
-      <Hero>
-        <Inner currentPage="Cart" />
-      </Hero>
       <section className={classes.cart}>
         {cartProducts.length > 0 ? (
           <Container>

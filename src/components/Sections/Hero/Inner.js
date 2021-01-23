@@ -1,5 +1,4 @@
 import { Breadcrumbs, Link, makeStyles, Typography } from '@material-ui/core';
-import PropTypes from 'prop-types';
 import { useLocation, NavLink } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
@@ -31,13 +30,10 @@ const Inner = ({ currentPage }) => {
           aria-current="page"
           component={NavLink}
         >
-          {currentPage}
+          {currentPage || ''}
         </Link>
       </Breadcrumbs>
     </div>
   );
-};
-Inner.propTypes = {
-  currentPage: PropTypes.string.isRequired,
 };
 export default Inner;

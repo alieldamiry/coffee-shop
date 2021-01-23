@@ -2,8 +2,6 @@ import { Box, Button, Grid, makeStyles, Paper, TextField, Typography } from '@ma
 import Container from '@material-ui/core/Container';
 import MenuItem from '@material-ui/core/MenuItem';
 import { useForm, Controller } from 'react-hook-form';
-import Hero from '../components/Sections/Hero/Hero';
-import Inner from '../components/Sections/Hero/Inner';
 import PriceSummary from '../components/PriceSummary';
 
 const useStyles = makeStyles(() => ({
@@ -32,9 +30,6 @@ const Checkout = () => {
   };
   return (
     <>
-      <Hero>
-        <Inner currentPage="Checkout" />
-      </Hero>
       <section className={classes.checkout}>
         <Container maxWidth="md">
           <form method="post" onSubmit={handleSubmit(onSubmit)}>

@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import About from './pages/About';
 import Home from './pages/Home';
@@ -12,15 +12,17 @@ import Checkout from './pages/Checkout';
 
 const useStyles = makeStyles(() => ({
   App: {
-    // minHeight: '100%',
-    // display: 'grid',
-    // gridTemplateRows: 'auto 1fr auto',
+    minHeight: '100%',
+    display: 'grid',
+    gridTemplateRows: 'auto 1fr auto',
   },
 }));
 const App = () => {
   const classes = useStyles();
+  const location = useLocation();
+
   return (
-    <div className={classes.App}>
+    <div className={location.pathname !== '/cart' ? classes.App : null}>
       <Layout>
         <Switch>
           <Route path="/cart" component={Cart} />

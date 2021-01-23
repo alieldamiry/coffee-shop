@@ -3,8 +3,6 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Hero from '../components/Sections/Hero/Hero';
-import Inner from '../components/Sections/Hero/Inner';
 import * as actions from '../store/actions/cart';
 
 const useStyles = makeStyles((theme) => ({
@@ -67,16 +65,16 @@ const SingleProduct = () => {
   };
   return (
     <>
-      <Hero>
-        <Inner currentPage="Product Name" />
-      </Hero>
+      {/* <Hero>
+        <Inner currentPage={product?.name} />
+      </Hero> */}
       {product ? (
         <section className={classes.SingleProduct}>
           <Grid container spacing={5}>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <img className={classes.productImg} src={product.image} alt={product.name} />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <div className={classes.wrapper}>
                 <div>
                   <Typography component="h4" variant="h4" gutterBottom>{product.title}</Typography>
