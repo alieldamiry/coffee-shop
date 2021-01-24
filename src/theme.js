@@ -16,9 +16,6 @@ const theme = createMuiTheme({
     MuiLink: {
       underline: 'none',
     },
-    MuiButton: {
-      disableRipple: true,
-    },
     MuiInputLabel: {
       // shrink: ,
     },
