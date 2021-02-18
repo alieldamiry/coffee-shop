@@ -10,7 +10,7 @@ import Product from '../components/Product';
 import Hero from '../components/Sections/Hero/Hero';
 import Inner from '../components/Sections/Hero/Inner';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   shop: {
     padding: '4rem 10%',
     color: '#fff',
@@ -20,6 +20,11 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     justifyContent: 'center',
     marginBottom: '3rem',
+  },
+  checkobox: {
+    '& svg': {
+      color: theme.palette.primary.main,
+    },
   },
 }));
 
@@ -63,6 +68,7 @@ const Shop = () => {
           <FormControlLabel
             control={(
               <Checkbox
+                className={classes.checkobox}
                 checked={filters.coffee}
                 onChange={handleChange}
                 name="coffee"
@@ -74,6 +80,7 @@ const Shop = () => {
           <FormControlLabel
             control={(
               <Checkbox
+                className={classes.checkobox}
                 checked={filters.drinks}
                 onChange={handleChange}
                 name="drinks"
