@@ -54,7 +54,6 @@ const Product = ({ id, name, image, description, price }) => {
     } else {
       dispatch(actions.incrementQuantity(id));
     }
-    dispatch(actions.calculatePrice());
   };
   return (
     <div className={classes.product}>

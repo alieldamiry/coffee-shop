@@ -1,5 +1,6 @@
 import { makeStyles, Typography } from '@material-ui/core';
 import { useSelector } from 'react-redux';
+import totalPriceSelector from '../store/selectors/TotalPriceSelector';
 
 const useStyles = makeStyles((theme) => ({
   totalsBox: {
@@ -23,7 +24,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const PriceSummary = () => {
-  const totalPrice = useSelector((state) => state.cart.totalPrice);
+  const state = useSelector((s) => s);
+  const totalPrice = totalPriceSelector(state);
   const classes = useStyles();
   return (
     <>

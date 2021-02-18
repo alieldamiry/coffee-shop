@@ -61,7 +61,6 @@ const SingleProduct = () => {
     } else {
       dispatch(actions.incrementQuantity(product.id));
     }
-    dispatch(actions.calculatePrice());
   };
   return (
     <>

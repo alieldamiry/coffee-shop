@@ -6,6 +6,7 @@ import { useReducer } from 'react';
 import axios from 'axios';
 import CheckoutForm from '../components/CheckoutForm';
 import Modal from '../components/Modal';
+import totalPriceSelector from '../store/selectors/TotalPriceSelector';
 
 const useStyles = makeStyles(() => ({
   checkout: {
@@ -50,10 +51,12 @@ const Checkout = () => {
   const classes = useStyles();
   const cartProducts = useSelector((state) => state.cart.cartProducts);
   const [state, dispatch] = useReducer(reducer, initialState);
+  const tempState = useSelector((s) => s);
+  const totalPrice = totalPriceSelector(tempState);
   const onSubmit = (data) => {
     dispatch({ type: 'SUBMITON_START' });
     axios.post('https://coffe-shop-6d2ae-default-rtdb.firebaseio.com/orders.json',
-      { data: { ...data }, orderedProducts: [...cartProducts] })
+      { data: { ...data }, orderedProducts: [...cartProducts], totalPrice })
       .then(() => {
         dispatch({ type: 'SUBMITON_SUCCESS' });
       })
