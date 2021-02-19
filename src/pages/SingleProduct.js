@@ -64,9 +64,6 @@ const SingleProduct = () => {
   };
   return (
     <>
-      {/* <Hero>
-        <Inner currentPage={product?.name} />
-      </Hero> */}
       {product ? (
         <section className={classes.SingleProduct}>
           <Grid container spacing={5}>

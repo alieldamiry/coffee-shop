@@ -22,13 +22,6 @@ const removeFromCart = (state, action) => {
   };
 };
 
-const calculatePrice = (state /* ,action */) => {
-  const totalPrice = state.cartProducts.reduce((prev, cur) => {
-    return (prev + cur.price * cur.quantity);
-  }, 0);
-  return { ...state, totalPrice: totalPrice.toFixed(2) };
-};
-
 const incrementQuantity = (state, action) => {
   const products = [...state.cartProducts];
   products.filter((p) => p.id === action.productId)[0].quantity += 1;
@@ -53,7 +46,6 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.ADD_TO_CART: return addToCart(state, action);
     case actionTypes.REMOVE_FORM_CART: return removeFromCart(state, action);
-    case actionTypes.CALCULATE_PRICE: return calculatePrice(state, action);
     case actionTypes.INCREMENT_QAUNTITY: return incrementQuantity(state, action);
     case actionTypes.DECREMENT_QAUNTITY: return decrementQuantity(state, action);
     default: return state;
